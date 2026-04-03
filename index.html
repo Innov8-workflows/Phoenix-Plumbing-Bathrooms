@@ -1,1388 +1,846 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="scroll-behavior:smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pheonix Plumbing &amp; Bathrooms | 24/7 Emergency Plumber Alfreton</title>
-  <meta name="description" content="Phoenix Plumbing &amp; Bathrooms — Kyle's local 24/7 plumbing service in Alfreton, Swanwick &amp; Derbyshire. Leak repairs, bathrooms, boilers &amp; more. Call 07394 604141.">
-  <meta name="theme-color" content="#E85D04">
-  <link rel="icon" href="logo.jpg" type="image/jpeg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
-
-  <style>
-    /* ===== RESET & BASE ===== */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; font-size: 16px; }
-
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: #1A1A2E;
-      color: #ffffff;
-      overflow-x: hidden;
-    }
-
-    /* ===== CSS VARIABLES ===== */
-    :root {
-      --fire: #E85D04;
-      --fire-light: #FF7518;
-      --fire-glow: rgba(232, 93, 4, 0.3);
-      --navy: #1A1A2E;
-      --navy-mid: #16213E;
-      --navy-light: #0F3460;
-      --white: #ffffff;
-      --grey: #c8cdd8;
-      --grey-dark: #8892a4;
-      --section-pad: clamp(4rem, 8vw, 7rem);
-      --radius: 6px;
-    }
-
-    img { display: block; max-width: 100%; }
-    a { color: inherit; text-decoration: none; }
-
-    /* ===== TYPOGRAPHY ===== */
-    .display {
-      font-family: 'Bebas Neue', cursive;
-      letter-spacing: 0.04em;
-      line-height: 0.95;
-    }
-
-    /* ===== UTILITIES ===== */
-    .container {
-      width: 100%;
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 0 clamp(1.25rem, 5vw, 2.5rem);
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      background: var(--fire);
-      color: #fff;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 0.3rem 0.75rem;
-      border-radius: 2px;
-    }
-
-    .badge--outline {
-      background: transparent;
-      border: 1.5px solid var(--fire);
-      color: var(--fire);
-    }
-
-    .stars {
-      display: flex;
-      gap: 2px;
-      color: var(--fire);
-      font-size: 1.1rem;
-    }
-
-    /* ===== HEADER / NAV ===== */
-    header {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      background: rgba(26, 26, 46, 0.97);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(232, 93, 4, 0.2);
-    }
-
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 68px;
-      gap: 1rem;
-    }
-
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      line-height: 1;
-    }
-
-    .nav-logo img {
-      height: 52px;
-      width: auto;
-      display: block;
-    }
-
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .nav-phone {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-weight: 700;
-      font-size: 1rem;
-      color: var(--white);
-      transition: color 0.2s;
-    }
-
-    .nav-phone:hover { color: var(--fire); }
-
-    .nav-phone-icon {
-      width: 32px; height: 32px;
-      background: var(--fire);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 0.85rem;
-      flex-shrink: 0;
-    }
-
-    .nav-cta {
-      background: var(--fire);
-      color: #fff;
-      font-weight: 700;
-      font-size: 0.85rem;
-      padding: 0.6rem 1.3rem;
-      border-radius: var(--radius);
-      letter-spacing: 0.05em;
-      transition: background 0.2s, transform 0.15s;
-      white-space: nowrap;
-    }
-
-    .nav-cta:hover { background: var(--fire-light); transform: translateY(-1px); }
-
-    /* ===== HERO ===== */
-    .hero {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-      padding-top: 68px;
-    }
-
-    .hero-bg {
-      position: absolute;
-      inset: 0;
-      background-image: url('IMG_9265.jpeg');
-      background-size: cover;
-      background-position: center center;
-      filter: brightness(0.35);
-      transform: scale(1.03);
-      transition: transform 8s ease;
-    }
-
-    .hero:hover .hero-bg { transform: scale(1); }
-
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        135deg,
-        rgba(26, 26, 46, 0.85) 0%,
-        rgba(26, 26, 46, 0.4) 50%,
-        rgba(232, 93, 4, 0.15) 100%
-      );
-    }
-
-    .hero-flame {
-      position: absolute;
-      right: -80px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(232,93,4,0.18) 0%, transparent 70%);
-      border-radius: 50%;
-      pointer-events: none;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 780px;
-      padding: var(--section-pad) 0;
-    }
-
-    .hero-eyebrow {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    .hero-rating {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.12);
-      padding: 0.35rem 0.8rem;
-      border-radius: 2px;
-      font-size: 0.8rem;
-      font-weight: 500;
-    }
-
-    .hero-h1 {
-      font-size: clamp(3.2rem, 8vw, 7rem);
-      color: var(--white);
-      margin-bottom: 1rem;
-      text-transform: uppercase;
-    }
-
-    .hero-h1 .fire-word { color: var(--fire); }
-
-    .hero-sub {
-      font-size: clamp(1rem, 2.5vw, 1.25rem);
-      color: var(--grey);
-      max-width: 520px;
-      line-height: 1.6;
-      margin-bottom: 2.5rem;
-      font-weight: 300;
-    }
-
-    .hero-sub strong { color: var(--white); font-weight: 500; }
-
-    .hero-actions {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      background: var(--fire);
-      color: #fff;
-      font-weight: 700;
-      font-size: 1rem;
-      padding: 1rem 2rem;
-      border-radius: var(--radius);
-      letter-spacing: 0.04em;
-      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-      box-shadow: 0 0 0 0 var(--fire-glow);
-    }
-
-    .btn-primary:hover {
-      background: var(--fire-light);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 30px var(--fire-glow);
-    }
-
-    .btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      border: 2px solid rgba(255,255,255,0.3);
-      color: var(--white);
-      font-weight: 500;
-      font-size: 1rem;
-      padding: 1rem 1.8rem;
-      border-radius: var(--radius);
-      transition: border-color 0.2s, color 0.2s;
-    }
-
-    .btn-secondary:hover { border-color: var(--fire); color: var(--fire); }
-
-    .hero-scroll {
-      position: absolute;
-      bottom: 2rem;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 2;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.4rem;
-      font-size: 0.7rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--grey-dark);
-      animation: float 2.5s ease-in-out infinite;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateX(-50%) translateY(0); }
-      50% { transform: translateX(-50%) translateY(6px); }
-    }
-
-    .scroll-line {
-      width: 1px; height: 40px;
-      background: linear-gradient(to bottom, var(--fire), transparent);
-    }
-
-    /* ===== TRUST BAR ===== */
-    .trust-bar {
-      background: var(--fire);
-      padding: 0;
-      overflow: hidden;
-    }
-
-    .trust-ticker {
-      display: flex;
-      align-items: center;
-      white-space: nowrap;
-      animation: ticker 28s linear infinite;
-      gap: 0;
-    }
-
-    @keyframes ticker {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
-    }
-
-    .trust-item {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      padding: 0.85rem 2.5rem;
-      font-weight: 700;
-      font-size: 0.82rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      flex-shrink: 0;
-    }
-
-    .trust-dot {
-      width: 5px; height: 5px;
-      background: rgba(255,255,255,0.5);
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
-
-    /* ===== SERVICES ===== */
-    .services {
-      background: var(--navy-mid);
-      padding: var(--section-pad) 0;
-    }
-
-    .section-label {
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--fire);
-      margin-bottom: 0.75rem;
-    }
-
-    .section-title {
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      margin-bottom: 1rem;
-      color: var(--white);
-      text-transform: uppercase;
-    }
-
-    .section-body {
-      font-size: 1.05rem;
-      color: var(--grey);
-      max-width: 540px;
-      line-height: 1.7;
-      margin-bottom: 3rem;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 1.5px;
-      background: rgba(232,93,4,0.08);
-      border: 1px solid rgba(232,93,4,0.12);
-    }
-
-    .service-card {
-      background: var(--navy-mid);
-      padding: 2.5rem 2rem;
-      position: relative;
-      overflow: hidden;
-      transition: background 0.25s;
-    }
-
-    .service-card::before {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0;
-      width: 0; height: 3px;
-      background: var(--fire);
-      transition: width 0.35s ease;
-    }
-
-    .service-card:hover { background: rgba(232,93,4,0.06); }
-    .service-card:hover::before { width: 100%; }
-
-    .service-icon {
-      font-size: 2.2rem;
-      margin-bottom: 1.2rem;
-      display: block;
-    }
-
-    .service-name {
-      font-family: 'Bebas Neue', cursive;
-      font-size: 1.5rem;
-      letter-spacing: 0.06em;
-      color: var(--white);
-      margin-bottom: 0.6rem;
-    }
-
-    .service-desc {
-      font-size: 0.9rem;
-      color: var(--grey-dark);
-      line-height: 1.6;
-    }
-
-    /* ===== WHY KYLE ===== */
-    .why {
-      background: var(--navy);
-      padding: var(--section-pad) 0;
-    }
-
-    .why-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: center;
-    }
-
-    .why-image-wrap {
-      position: relative;
-      overflow: visible;
-    }
-
-    .why-img {
-      width: 100%;
-      aspect-ratio: 4/5;
-      object-fit: cover;
-      border-radius: var(--radius);
-      filter: brightness(0.9);
-    }
-
-    .why-img-badge {
-      position: absolute;
-      bottom: -1.5rem;
-      right: -1.5rem;
-      background: var(--fire);
-      color: #fff;
-      padding: 1.5rem;
-      border-radius: var(--radius);
-      text-align: center;
-      min-width: 130px;
-    }
-
-    .why-img-badge-num {
-      font-family: 'Bebas Neue', cursive;
-      font-size: 3rem;
-      line-height: 1;
-      display: block;
-    }
-
-    .why-img-badge-label {
-      font-size: 0.7rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      opacity: 0.85;
-      margin-top: 0.2rem;
-    }
-
-    .why-frame {
-      position: absolute;
-      top: -1rem; left: -1rem;
-      width: 60%;
-      height: 60%;
-      border: 2px solid rgba(232,93,4,0.3);
-      border-radius: var(--radius);
-      pointer-events: none;
-    }
-
-    .why-points {
-      display: flex;
-      flex-direction: column;
-      gap: 1.8rem;
-      margin-top: 2.5rem;
-    }
-
-    .why-point {
-      display: flex;
-      gap: 1.2rem;
-      align-items: flex-start;
-    }
-
-    .why-point-icon {
-      width: 48px; height: 48px;
-      border: 1.5px solid var(--fire);
-      border-radius: var(--radius);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.3rem;
-      flex-shrink: 0;
-      color: var(--fire);
-      background: rgba(232,93,4,0.07);
-    }
-
-    .why-point-title {
-      font-weight: 700;
-      font-size: 1rem;
-      margin-bottom: 0.3rem;
-      color: var(--white);
-    }
-
-    .why-point-body {
-      font-size: 0.9rem;
-      color: var(--grey-dark);
-      line-height: 1.6;
-    }
-
-    /* ===== GALLERY ===== */
-    .gallery {
-      background: var(--navy-mid);
-      padding: var(--section-pad) 0;
-    }
-
-    .gallery-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      margin-bottom: 2.5rem;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      grid-template-rows: auto;
-      gap: 1rem;
-    }
-
-    .gallery-item {
-      overflow: hidden;
-      border-radius: var(--radius);
-      background: var(--navy-light);
-      position: relative;
-    }
-
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      display: block;
-      transition: transform 0.5s ease, filter 0.3s;
-    }
-
-    .gallery-item:hover img {
-      transform: scale(1.05);
-      filter: brightness(0.8);
-    }
-
-    .gallery-item--large {
-      grid-column: span 7;
-      aspect-ratio: 16/10;
-    }
-
-    .gallery-item--small {
-      grid-column: span 5;
-      aspect-ratio: 3/2;
-    }
-
-    .gallery-item--wide {
-      grid-column: span 12;
-      aspect-ratio: 21/6;
-    }
-
-    .gallery-item--third {
-      grid-column: span 4;
-      aspect-ratio: 4/5;
-    }
-
-    .gallery-item--half {
-      grid-column: span 6;
-      aspect-ratio: 4/3;
-    }
-
-    .gallery-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(26,26,46,0.8) 0%, transparent 50%);
-      opacity: 0;
-      transition: opacity 0.3s;
-      display: flex;
-      align-items: flex-end;
-      padding: 1.5rem;
-    }
-
-    .gallery-item:hover .gallery-overlay { opacity: 1; }
-
-    .gallery-label {
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--fire);
-    }
-
-    /* ===== REVIEWS ===== */
-    .reviews {
-      background: var(--navy);
-      padding: var(--section-pad) 0;
-    }
-
-    .reviews-meta {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 3rem;
-      flex-wrap: wrap;
-    }
-
-    .reviews-score {
-      font-family: 'Bebas Neue', cursive;
-      font-size: 4rem;
-      color: var(--fire);
-      line-height: 1;
-    }
-
-    .reviews-info { display: flex; flex-direction: column; gap: 0.3rem; }
-
-    .reviews-count {
-      font-size: 0.8rem;
-      color: var(--grey-dark);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-
-    .reviews-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .review-card {
-      background: var(--navy-mid);
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: var(--radius);
-      padding: 2rem;
-      position: relative;
-      transition: border-color 0.25s, transform 0.25s;
-    }
-
-    .review-card:hover {
-      border-color: rgba(232,93,4,0.3);
-      transform: translateY(-3px);
-    }
-
-    .review-quote-mark {
-      font-family: Georgia, serif;
-      font-size: 5rem;
-      color: var(--fire);
-      opacity: 0.2;
-      position: absolute;
-      top: -0.5rem;
-      left: 1.5rem;
-      line-height: 1;
-      pointer-events: none;
-    }
-
-    .review-stars { margin-bottom: 1.2rem; }
-
-    .review-text {
-      font-size: 0.95rem;
-      color: var(--grey);
-      line-height: 1.75;
-      margin-bottom: 1.5rem;
-      font-style: italic;
-    }
-
-    .review-author {
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-    }
-
-    .review-avatar {
-      width: 38px; height: 38px;
-      border-radius: 50%;
-      background: var(--fire);
-      display: flex; align-items: center; justify-content: center;
-      font-weight: 700;
-      font-size: 0.85rem;
-      flex-shrink: 0;
-    }
-
-    .review-name {
-      font-weight: 600;
-      font-size: 0.9rem;
-    }
-
-    .review-source {
-      font-size: 0.75rem;
-      color: var(--grey-dark);
-    }
-
-    .google-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      padding: 0.3rem 0.7rem;
-      border-radius: 2px;
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      margin-left: auto;
-    }
-
-    /* ===== CONTACT ===== */
-    .contact {
-      background: var(--navy-mid);
-      padding: var(--section-pad) 0;
-    }
-
-    .contact-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: start;
-    }
-
-    .contact-details { display: flex; flex-direction: column; gap: 2rem; margin-top: 2rem; }
-
-    .contact-item {
-      display: flex;
-      gap: 1.2rem;
-      align-items: flex-start;
-    }
-
-    .contact-icon {
-      width: 44px; height: 44px;
-      background: rgba(232,93,4,0.12);
-      border: 1px solid rgba(232,93,4,0.25);
-      border-radius: var(--radius);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.1rem;
-      flex-shrink: 0;
-    }
-
-    .contact-item-label {
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--fire);
-      margin-bottom: 0.25rem;
-    }
-
-    .contact-item-value {
-      font-size: 1.05rem;
-      color: var(--white);
-      font-weight: 500;
-      line-height: 1.5;
-    }
-
-    .contact-cta-box {
-      background: linear-gradient(135deg, rgba(232,93,4,0.15), rgba(232,93,4,0.05));
-      border: 1px solid rgba(232,93,4,0.25);
-      border-radius: var(--radius);
-      padding: 2.5rem;
-      text-align: center;
-    }
-
-    .contact-cta-box .display {
-      font-size: clamp(2rem, 4vw, 3rem);
-      margin-bottom: 0.5rem;
-    }
-
-    .contact-cta-box p {
-      color: var(--grey);
-      font-size: 0.95rem;
-      margin-bottom: 2rem;
-      line-height: 1.6;
-    }
-
-    .phone-big {
-      display: block;
-      font-family: 'Bebas Neue', cursive;
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      color: var(--fire);
-      letter-spacing: 0.08em;
-      margin-bottom: 1.5rem;
-      transition: color 0.2s;
-    }
-
-    .phone-big:hover { color: var(--fire-light); }
-
-    .available-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: #4ade80;
-    }
-
-    .available-dot {
-      width: 8px; height: 8px;
-      background: #4ade80;
-      border-radius: 50%;
-      animation: pulse 2s ease-in-out infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.5; transform: scale(0.8); }
-    }
-
-    /* ===== FOOTER ===== */
-    footer {
-      background: var(--navy);
-      border-top: 1px solid rgba(232,93,4,0.15);
-      padding: 3rem 0 2rem;
-    }
-
-    .footer-inner {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 3rem;
-      padding-bottom: 2.5rem;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-      margin-bottom: 2rem;
-    }
-
-    .footer-brand-name {
-      font-family: 'Bebas Neue', cursive;
-      font-size: 1.6rem;
-      letter-spacing: 0.06em;
-      margin-bottom: 0.6rem;
-    }
-
-    .footer-brand-name span { color: var(--fire); }
-
-    .footer-tagline {
-      font-size: 0.88rem;
-      color: var(--grey-dark);
-      line-height: 1.6;
-      max-width: 280px;
-    }
-
-    .footer-col-title {
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--fire);
-      margin-bottom: 1.2rem;
-    }
-
-    .footer-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
-    }
-
-    .footer-list li {
-      font-size: 0.88rem;
-      color: var(--grey-dark);
-    }
-
-    .footer-bottom {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-    }
-
-    .footer-copy {
-      font-size: 0.78rem;
-      color: var(--grey-dark);
-    }
-
-    /* ===== DIVIDER LINE ACCENT ===== */
-    .fire-line {
-      height: 3px;
-      background: linear-gradient(90deg, var(--fire) 0%, var(--fire-light) 50%, transparent 100%);
-      margin: 0;
-    }
-
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 900px) {
-      .why-inner { grid-template-columns: 1fr; gap: 3rem; }
-      .why-image-wrap { max-width: 480px; }
-      .why-img-badge { right: 0; bottom: -1.5rem; }
-      .contact-inner { grid-template-columns: 1fr; }
-      .gallery-item--large { grid-column: span 12; aspect-ratio: 16/9; }
-      .gallery-item--small { grid-column: span 12; aspect-ratio: 4/3; }
-      .gallery-item--wide { grid-column: span 12; }
-      .gallery-item--third { grid-column: span 6; aspect-ratio: 4/3; }
-      .gallery-item--half { grid-column: span 12; aspect-ratio: 16/9; }
-      .footer-inner { grid-template-columns: 1fr 1fr; }
-    }
-
-    @media (max-width: 640px) {
-      .nav-phone span { display: none; }
-      .hero-h1 { font-size: 3rem; }
-      .hero-actions { flex-direction: column; align-items: stretch; }
-      .btn-primary, .btn-secondary { justify-content: center; }
-      .footer-inner { grid-template-columns: 1fr; }
-      .footer-bottom { flex-direction: column; text-align: center; }
-      .why-img-badge { position: static; margin-top: 1rem; display: inline-flex; gap: 0.8rem; align-items: center; }
-      .why-img-badge-num { font-size: 2rem; }
-      .gallery-grid { display: flex; flex-direction: column; }
-      .gallery-item,
-      .gallery-item--large,
-      .gallery-item--small,
-      .gallery-item--third,
-      .gallery-item--half { aspect-ratio: 4/3; }
-    }
-
-    /* ===== PRINT / PDF ===== */
-    @media print {
-      * { animation: none !important; transition: none !important; }
-      header { position: static; }
-      .hero { min-height: auto; padding: 2rem 0; }
-      .hero-bg { filter: brightness(0.15); }
-      .trust-ticker { animation: none; }
-      .trust-bar { display: none; }
-      body { background: #fff; color: #111; }
-      .section-title, .hero-h1, .display { color: #1A1A2E; }
-      .section-label { color: #E85D04; }
-      .service-card, .review-card, .contact-cta-box { border: 1px solid #ddd; background: #f9f9f9; }
-      .hero-content { color: #111; }
-      .hero-sub { color: #444; }
-      .why-point-body, .service-desc, .footer-tagline, .review-text { color: #555; }
-      footer { background: #f9f9f9; border-top: 1px solid #ddd; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phoenix Plumbing & Bathrooms | 24/7 Emergency Plumber in Alfreton DE55</title>
+<meta name="description" content="Expert plumbing and bathroom fitting services in Swanwick, Alfreton. 24-hour emergency callouts, rapid 15-minute response. 5-star rated. Call +447394604141">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+--primary:#1a1a1a;
+--accent:#cc2200;
+--accent-hover:#e02800;
+--accent-light:rgba(204,34,0,0.08);
+--text:#374151;
+--text-light:#6b7280;
+--bg:#ffffff;
+--bg-alt:#f8f9fa;
+--card-bg:#ffffff;
+--border:#e5e7eb;
+--whatsapp:#25D366;
+--gold:#f59e0b;
+--shadow:0 2px 8px rgba(0,0,0,0.08);
+--shadow-hover:0 8px 24px rgba(0,0,0,0.15);
+}
+html{scroll-behavior:smooth}
+body{
+font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+font-size:1rem;
+line-height:1.6;
+color:var(--text);
+background:var(--bg);
+overflow-x:hidden;
+}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+
+/* HEADER */
+.header{
+position:fixed;top:0;left:0;right:0;z-index:1000;
+background:var(--primary);
+transition:box-shadow .3s ease;
+}
+.header.scrolled{box-shadow:0 2px 20px rgba(0,0,0,0.3)}
+.header-inner{
+display:flex;align-items:center;justify-content:space-between;
+max-width:1200px;margin:0 auto;padding:12px 24px;
+}
+.logo{
+font-size:1.35rem;font-weight:800;color:#fff;
+display:flex;align-items:center;gap:8px;
+}
+.logo span.phoenix{color:var(--accent)}
+.nav-links{display:flex;align-items:center;gap:28px;list-style:none}
+.nav-links a{
+color:rgba(255,255,255,0.85);font-weight:500;font-size:0.95rem;
+transition:color .2s ease;position:relative;
+}
+.nav-links a:hover{color:#fff}
+.nav-links a::after{
+content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;
+background:var(--accent);transition:width .2s ease;
+}
+.nav-links a:hover::after{width:100%}
+.header-cta{
+display:inline-flex;align-items:center;gap:6px;
+background:var(--accent);color:#fff;
+padding:10px 20px;border-radius:8px;font-weight:600;font-size:0.95rem;
+transition:background .2s ease,transform .2s ease;
+}
+.header-cta:hover{background:var(--accent-hover);transform:translateY(-1px)}
+.hamburger{
+display:none;flex-direction:column;gap:5px;cursor:pointer;
+background:none;border:none;padding:8px;
+}
+.hamburger span{
+display:block;width:24px;height:2.5px;background:#fff;
+border-radius:2px;transition:all .3s ease;
+}
+.hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.active span:nth-child(2){opacity:0}
+.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.mobile-nav{
+display:none;position:fixed;top:60px;left:0;right:0;
+background:var(--primary);padding:20px 24px;
+border-top:1px solid rgba(255,255,255,0.1);
+flex-direction:column;gap:16px;
+transform:translateY(-100%);opacity:0;
+transition:transform .3s ease,opacity .3s ease;
+}
+.mobile-nav.open{transform:translateY(0);opacity:1;display:flex}
+.mobile-nav a{
+color:rgba(255,255,255,0.9);font-size:1.1rem;font-weight:500;
+padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.05);
+}
+.mobile-nav .mobile-cta{
+display:block;text-align:center;
+background:var(--accent);color:#fff;
+padding:14px;border-radius:8px;font-weight:700;font-size:1.1rem;
+margin-top:8px;
+}
+
+@media(max-width:768px){
+.nav-links,.header-cta-wrap{display:none}
+.hamburger{display:flex}
+}
+
+/* HERO */
+.hero{
+min-height:100vh;display:flex;align-items:center;justify-content:center;
+background:linear-gradient(135deg,#0d0d0d 0%,#1a1a1a 40%,#2a1510 100%);
+position:relative;overflow:hidden;padding:120px 24px 80px;
+}
+.hero::before{
+content:'';position:absolute;top:-50%;right:-30%;
+width:80%;height:200%;
+background:radial-gradient(ellipse,rgba(204,34,0,0.08) 0%,transparent 70%);
+pointer-events:none;
+}
+.hero::after{
+content:'';position:absolute;bottom:0;left:0;right:0;height:120px;
+background:linear-gradient(to top,rgba(0,0,0,0.3),transparent);
+pointer-events:none;
+}
+.hero-content{
+max-width:800px;text-align:center;position:relative;z-index:1;
+}
+.emergency-badge{
+display:inline-flex;align-items:center;gap:8px;
+background:rgba(204,34,0,0.15);border:1px solid rgba(204,34,0,0.4);
+color:#ff6644;padding:8px 20px;border-radius:50px;
+font-weight:600;font-size:0.9rem;margin-bottom:24px;
+animation:pulse-glow 2s infinite;
+}
+@keyframes pulse-glow{
+0%,100%{box-shadow:0 0 8px rgba(204,34,0,0.2)}
+50%{box-shadow:0 0 20px rgba(204,34,0,0.4)}
+}
+.hero h1{
+font-size:clamp(2rem,5vw,3.5rem);font-weight:800;color:#fff;
+line-height:1.15;margin-bottom:20px;
+}
+.hero h1 span{color:var(--accent)}
+.hero-sub{
+font-size:clamp(1rem,2.5vw,1.2rem);color:rgba(255,255,255,0.75);
+line-height:1.7;margin-bottom:32px;max-width:650px;margin-left:auto;margin-right:auto;
+}
+.hero-ctas{
+display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:32px;
+}
+.btn{
+display:inline-flex;align-items:center;gap:8px;
+padding:16px 32px;border-radius:8px;font-weight:600;font-size:1.05rem;
+transition:all .2s ease;cursor:pointer;border:2px solid transparent;
+}
+.btn-accent{background:var(--accent);color:#fff;border-color:var(--accent)}
+.btn-accent:hover{background:var(--accent-hover);border-color:var(--accent-hover);transform:translateY(-2px);box-shadow:0 6px 20px rgba(204,34,0,0.3)}
+.btn-outline{background:transparent;color:#fff;border-color:rgba(255,255,255,0.5)}
+.btn-outline:hover{border-color:#fff;background:rgba(255,255,255,0.08);transform:translateY(-2px)}
+.trust-bar{
+display:flex;gap:12px;justify-content:center;flex-wrap:wrap;
+}
+.trust-pill{
+display:inline-flex;align-items:center;gap:6px;
+background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);
+color:rgba(255,255,255,0.85);padding:8px 16px;border-radius:50px;
+font-size:0.85rem;font-weight:500;
+}
+.trust-pill .gold{color:var(--gold)}
+
+/* SECTIONS */
+.section{padding:80px 24px}
+.section-alt{background:var(--bg-alt)}
+.section-title{
+text-align:center;margin-bottom:48px;
+}
+.section-title h2{
+font-size:2rem;font-weight:700;color:var(--primary);
+display:inline-block;position:relative;padding-bottom:12px;
+}
+.section-title h2::after{
+content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);
+width:60px;height:4px;background:var(--accent);border-radius:2px;
+}
+.section-title p{
+color:var(--text-light);margin-top:12px;font-size:1.05rem;
+}
+
+/* ABOUT */
+.about-grid{
+display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;
+}
+.about-text h3{
+font-size:1.4rem;font-weight:700;color:var(--primary);margin-bottom:16px;
+}
+.about-text p{margin-bottom:16px;color:var(--text);line-height:1.8}
+.about-text .highlight{
+color:var(--accent);font-weight:600;
+}
+.stat-cards{
+display:grid;grid-template-columns:1fr 1fr;gap:16px;
+}
+.stat-card{
+background:var(--card-bg);border:1px solid var(--border);
+border-radius:12px;padding:24px;text-align:center;
+box-shadow:var(--shadow);transition:all .2s ease;
+}
+.stat-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover)}
+.stat-card .stat-icon{font-size:2rem;margin-bottom:8px}
+.stat-card .stat-value{
+font-size:1.6rem;font-weight:800;color:var(--primary);
+}
+.stat-card .stat-label{
+font-size:0.85rem;color:var(--text-light);margin-top:4px;font-weight:500;
+}
+@media(max-width:768px){
+.about-grid{grid-template-columns:1fr;gap:32px}
+}
+
+/* SERVICES */
+.services-grid{
+display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+}
+.service-card{
+background:var(--card-bg);border:1px solid var(--border);
+border-radius:8px;padding:32px 24px;text-align:center;
+box-shadow:var(--shadow);transition:all .2s ease;
+}
+.service-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover)}
+.service-icon{font-size:2.8rem;margin-bottom:16px}
+.service-card h3{
+font-size:1.15rem;font-weight:700;color:var(--primary);margin-bottom:10px;
+}
+.service-card p{
+font-size:0.92rem;color:var(--text-light);line-height:1.6;
+}
+@media(max-width:1024px){.services-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){.services-grid{grid-template-columns:1fr}}
+
+/* PORTFOLIO */
+.portfolio-grid{
+display:grid;grid-template-columns:repeat(2,1fr);gap:24px;
+}
+.portfolio-card{
+border-radius:8px;overflow:hidden;box-shadow:var(--shadow);
+border:1px solid var(--border);background:var(--card-bg);
+transition:all .2s ease;
+}
+.portfolio-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover)}
+.ba-split{
+display:flex;aspect-ratio:4/3;position:relative;
+}
+.ba-side{
+flex:1;display:flex;align-items:center;justify-content:center;
+flex-direction:column;gap:8px;color:#fff;font-weight:600;
+font-size:1rem;position:relative;
+}
+.ba-before{background:#333}
+.ba-after{background:var(--accent)}
+.ba-side .ba-label{
+position:absolute;top:12px;left:12px;
+font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;
+background:rgba(0,0,0,0.3);padding:4px 10px;border-radius:4px;
+}
+.ba-divider{
+width:3px;background:rgba(255,255,255,0.5);position:relative;z-index:1;
+}
+.portfolio-caption{
+padding:14px 16px;text-align:center;
+}
+.portfolio-caption .demo-badge{
+display:inline-block;font-size:0.7rem;font-weight:600;
+color:var(--accent);background:var(--accent-light);
+padding:3px 10px;border-radius:4px;margin-bottom:6px;
+}
+.portfolio-caption p{font-size:0.85rem;color:var(--text-light)}
+@media(max-width:768px){.portfolio-grid{grid-template-columns:1fr}}
+
+/* REVIEWS */
+.reviews-header{
+text-align:center;margin-bottom:40px;
+}
+.reviews-header .overall-badge{
+display:inline-flex;align-items:center;gap:8px;
+background:var(--accent-light);border:1px solid rgba(204,34,0,0.15);
+padding:10px 24px;border-radius:50px;font-weight:700;
+color:var(--primary);font-size:1rem;margin-top:16px;
+}
+.reviews-grid{
+display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+}
+.review-card{
+background:var(--card-bg);border:1px solid var(--border);
+border-radius:8px;padding:32px 28px;
+box-shadow:var(--shadow);transition:all .2s ease;position:relative;
+}
+.review-card:nth-child(2){background:#fefefe}
+.review-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover)}
+.review-quote{
+font-size:3rem;color:var(--accent);opacity:0.2;
+position:absolute;top:12px;left:20px;font-family:Georgia,serif;line-height:1;
+}
+.review-stars{margin-bottom:12px}
+.review-stars span{color:var(--gold);font-size:1.1rem}
+.review-text{
+font-size:0.93rem;color:var(--text);line-height:1.7;
+margin-bottom:16px;font-style:italic;
+}
+.review-name{
+font-weight:700;color:var(--primary);font-size:0.95rem;
+}
+@media(max-width:768px){.reviews-grid{grid-template-columns:1fr}}
+
+/* CONTACT */
+.contact-grid{
+display:grid;grid-template-columns:1fr 1fr;gap:48px;
+}
+.form-group{margin-bottom:20px}
+.form-group label{
+display:block;font-weight:600;font-size:0.9rem;
+color:var(--primary);margin-bottom:6px;
+}
+.form-group input,.form-group textarea{
+width:100%;padding:12px 16px;border:1px solid var(--border);
+border-radius:8px;font-size:1rem;font-family:inherit;
+transition:border-color .2s ease,box-shadow .2s ease;
+background:var(--card-bg);color:var(--text);
+}
+.form-group input:focus,.form-group textarea:focus{
+outline:none;border-color:var(--accent);
+box-shadow:0 0 0 3px rgba(204,34,0,0.1);
+}
+.form-group textarea{resize:vertical;min-height:120px}
+.btn-submit{
+width:100%;padding:16px;border:none;background:var(--accent);
+color:#fff;font-size:1.05rem;font-weight:600;border-radius:8px;
+cursor:pointer;transition:all .2s ease;font-family:inherit;
+}
+.btn-submit:hover{background:var(--accent-hover);transform:translateY(-1px);box-shadow:0 4px 12px rgba(204,34,0,0.3)}
+.form-note{
+font-size:0.85rem;color:var(--text-light);margin-top:12px;line-height:1.6;
+}
+.contact-info{display:flex;flex-direction:column;gap:20px}
+.contact-item{
+display:flex;align-items:flex-start;gap:14px;
+}
+.contact-icon{
+font-size:1.4rem;width:44px;height:44px;
+background:var(--accent-light);border-radius:10px;
+display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.contact-item h4{font-weight:600;color:var(--primary);margin-bottom:2px}
+.contact-item p{font-size:0.92rem;color:var(--text-light)}
+.contact-item a{color:var(--accent);font-weight:600}
+.contact-item a:hover{text-decoration:underline}
+.map-placeholder{
+margin-top:8px;background:#e5e7eb;border-radius:8px;
+aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;
+flex-direction:column;gap:8px;cursor:pointer;
+transition:all .2s ease;border:2px dashed var(--border);
+}
+.map-placeholder:hover{border-color:var(--accent);background:#ddd}
+.map-placeholder span{font-size:2rem}
+.map-placeholder p{font-weight:600;color:var(--text-light);font-size:0.95rem}
+@media(max-width:768px){
+.contact-grid{grid-template-columns:1fr;gap:32px}
+}
+
+/* FOOTER */
+.footer{
+background:var(--primary);color:rgba(255,255,255,0.8);
+padding:40px 24px;
+}
+.footer-inner{
+max-width:1200px;margin:0 auto;
+display:flex;align-items:center;justify-content:space-between;
+flex-wrap:wrap;gap:20px;
+}
+.footer-left .footer-brand{
+font-size:1.2rem;font-weight:800;color:#fff;margin-bottom:4px;
+}
+.footer-left .footer-brand span{color:var(--accent)}
+.footer-left p{font-size:0.85rem;color:rgba(255,255,255,0.5)}
+.footer-socials{display:flex;gap:12px}
+.footer-socials a{
+width:40px;height:40px;border-radius:50%;
+background:rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;
+transition:all .2s ease;
+}
+.footer-socials a:hover{background:var(--accent)}
+.footer-socials a svg{width:20px;height:20px;fill:#fff}
+.footer-copy{
+max-width:1200px;margin:24px auto 0;padding-top:20px;
+border-top:1px solid rgba(255,255,255,0.08);
+text-align:center;font-size:0.82rem;color:rgba(255,255,255,0.35);
+}
+
+/* FLOATING WHATSAPP */
+.whatsapp-float{
+position:fixed;bottom:24px;right:24px;z-index:999;
+width:60px;height:60px;border-radius:50%;
+background:var(--whatsapp);display:flex;align-items:center;justify-content:center;
+box-shadow:0 4px 16px rgba(37,211,102,0.4);
+transition:all .2s ease;
+}
+.whatsapp-float:hover{transform:scale(1.1);box-shadow:0 6px 24px rgba(37,211,102,0.5)}
+.whatsapp-float svg{width:32px;height:32px;fill:#fff}
+.whatsapp-float .tooltip{
+position:absolute;right:70px;top:50%;transform:translateY(-50%);
+background:#333;color:#fff;padding:8px 14px;border-radius:6px;
+font-size:0.82rem;font-weight:500;white-space:nowrap;
+opacity:0;pointer-events:none;transition:opacity .2s ease;
+}
+.whatsapp-float:hover .tooltip{opacity:1}
+@media(max-width:768px){
+.whatsapp-float{bottom:max(24px,env(safe-area-inset-bottom,24px));right:16px}
+.section{padding:48px 16px}
+.hero{padding:100px 16px 60px}
+}
+
+/* Emergency Banner Animation */
+.emergency-strip{
+background:var(--accent);color:#fff;text-align:center;
+padding:8px 16px;font-size:0.85rem;font-weight:600;
+display:flex;align-items:center;justify-content:center;gap:8px;
+}
+</style>
 </head>
 <body>
 
-  <!-- ===== HEADER ===== -->
-  <header>
-    <div class="container nav-inner">
-      <a href="#" class="nav-logo">
-        <img src="logo.jpg" alt="Pheonix Plumbing &amp; Bathrooms">
-      </a>
-      <div class="nav-right">
-        <a href="tel:07394604141" class="nav-phone">
-          <span class="nav-phone-icon">📞</span>
-          <span>07394 604141</span>
-        </a>
-        <a href="tel:07394604141" class="nav-cta">Call Now — 24/7</a>
-      </div>
-    </div>
-  </header>
+<!-- HEADER -->
+<header class="header" id="header">
+<div class="header-inner">
+<a href="#" class="logo"><span class="phoenix">Phoenix</span> Plumbing & Bathrooms</a>
+<nav>
+<ul class="nav-links">
+<li><a href="#home">Home</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#work">Work</a></li>
+<li><a href="#reviews">Reviews</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+<div class="header-cta-wrap">
+<a href="tel:+447394604141" class="header-cta">📞 Call Now</a>
+</div>
+<button class="hamburger" id="hamburger" aria-label="Menu">
+<span></span><span></span><span></span>
+</button>
+</div>
+<div class="mobile-nav" id="mobileNav">
+<a href="#home" onclick="closeMenu()">Home</a>
+<a href="#services" onclick="closeMenu()">Services</a>
+<a href="#work" onclick="closeMenu()">Work</a>
+<a href="#reviews" onclick="closeMenu()">Reviews</a>
+<a href="#contact" onclick="closeMenu()">Contact</a>
+<a href="tel:+447394604141" class="mobile-cta">📞 Call +447394604141</a>
+</div>
+</header>
 
-  <!-- ===== HERO ===== -->
-  <section class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-overlay"></div>
-    <div class="hero-flame"></div>
+<!-- HERO -->
+<section class="hero" id="home">
+<div class="hero-content">
+<div class="emergency-badge">⚡ 24/7 Emergency Response — We're Always On Call</div>
+<h1>Expert <span>Plumbing & Bathroom Fitting</span> Services in Alfreton DE55</h1>
+<p class="hero-sub">Rated 5.0 stars across 18 reviews. Rapid response within 15 minutes, competitive pricing, and a service that goes above and beyond. Your trusted local plumber in Swanwick, Alfreton.</p>
+<div class="hero-ctas">
+<a href="tel:+447394604141" class="btn btn-accent">📞 Call +447394604141</a>
+<a href="https://wa.me/447394604141?text=Hi%2C%20I%20found%20your%20website%20and%20would%20like%20a%20quote." target="_blank" rel="noopener" class="btn btn-outline">💬 WhatsApp Us</a>
+</div>
+<div class="trust-bar">
+<span class="trust-pill"><span class="gold">★</span> 5.0 Stars (18 Reviews)</span>
+<span class="trust-pill">🛡️ Fully Insured</span>
+<span class="trust-pill">⚡ 24/7 Available</span>
+</div>
+</div>
+</section>
 
-    <div class="container">
-      <div class="hero-content">
-        <div class="hero-eyebrow">
-          <span class="badge">24/7 Emergency Response</span>
-          <span class="hero-rating">
-            <span class="stars">★★★★★</span>
-            <span>5.0 on Google · 18 Reviews</span>
-          </span>
-        </div>
+<!-- ABOUT -->
+<section class="section" id="about">
+<div class="container">
+<div class="section-title">
+<h2>About Phoenix Plumbing</h2>
+<p>Your local trusted plumber in Swanwick, Alfreton</p>
+</div>
+<div class="about-grid">
+<div class="about-text">
+<h3>Meet Kyle — Your Local Emergency Plumber</h3>
+<p>Phoenix Plumbing & Bathrooms is proudly run by <span class="highlight">Kyle</span>, offering a comprehensive 24-hour emergency plumbing and bathroom fitting service across Swanwick, Alfreton, and the wider Derbyshire area. Whether it's a burst pipe at 2am or a complete bathroom transformation, Kyle delivers exceptional results every time.</p>
+<p>Known for his <span class="highlight">rapid response times — arriving within just 15 minutes</span> — Kyle combines competitive pricing with a friendly, professional approach that consistently earns five-star reviews. From fixing leaks, taps and pipes to designing and installing full bathroom fits, no job is too big or too small.</p>
+<p>With a <span class="highlight">perfect 5.0-star rating across all 18 reviews</span>, Phoenix Plumbing has built a reputation for going above and beyond. Customers trust Kyle because he delivers honest, reliable work at a fair price — every single time.</p>
+</div>
+<div class="stat-cards">
+<div class="stat-card">
+<div class="stat-icon">⭐</div>
+<div class="stat-value">5.0</div>
+<div class="stat-label">Star Rating</div>
+</div>
+<div class="stat-card">
+<div class="stat-icon">💬</div>
+<div class="stat-value">18</div>
+<div class="stat-label">5-Star Reviews</div>
+</div>
+<div class="stat-card">
+<div class="stat-icon">⚡</div>
+<div class="stat-value">24/7</div>
+<div class="stat-label">Emergency Service</div>
+</div>
+<div class="stat-card">
+<div class="stat-icon">📍</div>
+<div class="stat-value">DE55</div>
+<div class="stat-label">Alfreton & Beyond</div>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-        <h1 class="display hero-h1">
-          Available<br>
-          <span class="fire-word">24/7</span> — Your<br>
-          Local Plumber
-        </h1>
+<!-- SERVICES -->
+<section class="section section-alt" id="services">
+<div class="container">
+<div class="section-title">
+<h2>Our Services</h2>
+<p>Professional plumbing and bathroom solutions for every need</p>
+</div>
+<div class="services-grid">
+<div class="service-card">
+<div class="service-icon">🚨</div>
+<h3>24-Hour Emergency Plumbing</h3>
+<p>Burst pipes, major leaks, or flooding? We're available around the clock with rapid 15-minute response times. No call-out too early or too late.</p>
+</div>
+<div class="service-card">
+<div class="service-icon">🚿</div>
+<h3>Full Bathroom Fitting</h3>
+<p>Complete bathroom design and installation from start to finish. We handle plumbing, tiling, fixtures, and finishing touches for your dream bathroom.</p>
+</div>
+<div class="service-card">
+<div class="service-icon">🔧</div>
+<h3>Leak Detection & Repair</h3>
+<p>Expert leak detection and lasting repairs for mains water leaks, hidden pipe leaks, and dripping joints. We find and fix the problem fast.</p>
+</div>
+<div class="service-card">
+<div class="service-icon">🚰</div>
+<h3>Taps & Pipe Work</h3>
+<p>Installation, repair and replacement of taps, pipes and valves. From modern kitchen mixers to resolving decades-old limescale build-up in pipe systems.</p>
+</div>
+<div class="service-card">
+<div class="service-icon">🛁</div>
+<h3>Bathroom Renovations</h3>
+<p>Transform your tired bathroom into a stunning space. We manage the full renovation including removal of old suites, plumbing, and fitting new fixtures.</p>
+</div>
+<div class="service-card">
+<div class="service-icon">🏠</div>
+<h3>General Plumbing</h3>
+<p>From outside tap installations to radiator repairs and toilet replacements. Reliable, affordable general plumbing for homes across Derbyshire.</p>
+</div>
+</div>
+</div>
+</section>
 
-        <p class="hero-sub">
-          Fast, reliable plumbing across <strong>Alfreton, Swanwick &amp; Derbyshire</strong>. 
-          From emergency leaks to full bathroom fits — Kyle's there when you need him.
-        </p>
+<!-- PORTFOLIO -->
+<section class="section" id="work">
+<div class="container">
+<div class="section-title">
+<h2>Our Work</h2>
+<p>Real jobs, real results</p>
+</div>
+<div class="portfolio-grid">
+<div class="portfolio-card">
+<div class="ba-split">
+<div class="ba-side ba-before">
+<span class="ba-label">Before</span>
+<span style="font-size:2rem">📷</span>
+Before Photo
+</div>
+<div class="ba-divider"></div>
+<div class="ba-side ba-after">
+<span class="ba-label">After</span>
+<span style="font-size:2rem">📷</span>
+After Photo
+</div>
+</div>
+<div class="portfolio-caption">
+<span class="demo-badge">Demo · Innov8 Workflows</span>
+<p>Your before & after photos would appear here</p>
+</div>
+</div>
+<div class="portfolio-card">
+<div class="ba-split">
+<div class="ba-side ba-before">
+<span class="ba-label">Before</span>
+<span style="font-size:2rem">📷</span>
+Before Photo
+</div>
+<div class="ba-divider"></div>
+<div class="ba-side ba-after">
+<span class="ba-label">After</span>
+<span style="font-size:2rem">📷</span>
+After Photo
+</div>
+</div>
+<div class="portfolio-caption">
+<span class="demo-badge">Demo · Innov8 Workflows</span>
+<p>Your before & after photos would appear here</p>
+</div>
+</div>
+<div class="portfolio-card">
+<div class="ba-split">
+<div class="ba-side ba-before">
+<span class="ba-label">Before</span>
+<span style="font-size:2rem">📷</span>
+Before Photo
+</div>
+<div class="ba-divider"></div>
+<div class="ba-side ba-after">
+<span class="ba-label">After</span>
+<span style="font-size:2rem">📷</span>
+After Photo
+</div>
+</div>
+<div class="portfolio-caption">
+<span class="demo-badge">Demo · Innov8 Workflows</span>
+<p>Your before & after photos would appear here</p>
+</div>
+</div>
+<div class="portfolio-card">
+<div class="ba-split">
+<div class="ba-side ba-before">
+<span class="ba-label">Before</span>
+<span style="font-size:2rem">📷</span>
+Before Photo
+</div>
+<div class="ba-divider"></div>
+<div class="ba-side ba-after">
+<span class="ba-label">After</span>
+<span style="font-size:2rem">📷</span>
+After Photo
+</div>
+</div>
+<div class="portfolio-caption">
+<span class="demo-badge">Demo · Innov8 Workflows</span>
+<p>Your before & after photos would appear here</p>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-        <div class="hero-actions">
-          <a href="tel:07394604141" class="btn-primary">
-            📞 Call Kyle Now
-          </a>
-          <a href="#services" class="btn-secondary">
-            View Services ↓
-          </a>
-        </div>
-      </div>
-    </div>
+<!-- REVIEWS -->
+<section class="section section-alt" id="reviews">
+<div class="container">
+<div class="reviews-header">
+<div class="section-title">
+<h2>What Our Customers Say</h2>
+</div>
+<div class="overall-badge">⭐ 5.0 Stars (18 Reviews)</div>
+</div>
+<div class="reviews-grid">
+<div class="review-card">
+<div class="review-quote">"</div>
+<div class="review-stars">
+<span>★ ★ ★ ★ ★</span>
+</div>
+<p class="review-text">We called Kyle out for a mains water leak and he arrived within 15 minutes. Conditions were bleak with it being an active groundwork site but it didn't phase Kyle one bit. He went above and beyond to get the issue resolved and water back up and running to our property. Highly recommend and fantastic price! Thankyou Kyle</p>
+<div class="review-name">Joshua Robinson</div>
+</div>
+<div class="review-card">
+<div class="review-quote">"</div>
+<div class="review-stars">
+<span>★ ★ ★ ★ ★</span>
+</div>
+<p class="review-text">I had an outside tap fitted. He did a brilliant job. Very minimal mess and cleaned up after he finished the job and a very reasonable price. Very friendly and approachable. Would definitely recommend using Kyle for any plumbing work.</p>
+<div class="review-name">Carolyn</div>
+</div>
+<div class="review-card">
+<div class="review-quote">"</div>
+<div class="review-stars">
+<span>★ ★ ★ ★ ★</span>
+</div>
+<p class="review-text">Did a great job working on the pipes and taps of our 1950's ex-council house and possibly 70 years of lime build-up. We definitely will have Kyle in again next time!</p>
+<div class="review-name">Boyd Chester-Freeman</div>
+</div>
+</div>
+</div>
+</section>
 
-    <div class="hero-scroll">
-      <div class="scroll-line"></div>
-      <span>Scroll</span>
-    </div>
-  </section>
+<!-- CONTACT -->
+<section class="section" id="contact">
+<div class="container">
+<div class="section-title">
+<h2>Get In Touch</h2>
+<p>Request a free quote or book an emergency call-out</p>
+</div>
+<div class="contact-grid">
+<div>
+<form id="contactForm" onsubmit="handleSubmit(event)">
+<div class="form-group">
+<label for="name">Full Name *</label>
+<input type="text" id="name" name="name" required placeholder="Your full name">
+</div>
+<div class="form-group">
+<label for="email">Email Address *</label>
+<input type="email" id="email" name="email" required placeholder="your@email.com">
+</div>
+<div class="form-group">
+<label for="phone">Phone Number</label>
+<input type="tel" id="phone" name="phone" placeholder="Your phone number (optional)">
+</div>
+<div class="form-group">
+<label for="message">Message *</label>
+<textarea id="message" name="message" required placeholder="Tell us about your plumbing or bathroom needs..."></textarea>
+</div>
+<button type="submit" class="btn-submit">Send Enquiry →</button>
+</form>
+<p class="form-note">We aim to respond within 24 hours. For emergencies call us directly on <a href="tel:+447394604141" style="color:var(--accent);font-weight:600">+44 7394 604141</a>.</p>
+</div>
+<div class="contact-info">
+<div class="contact-item">
+<div class="contact-icon">📍</div>
+<div>
+<h4>Address</h4>
+<p>Broadway, Swanwick, Alfreton DE55 1AJ</p>
+</div>
+</div>
+<div class="contact-item">
+<div class="contact-icon">📞</div>
+<div>
+<h4>Phone</h4>
+<p><a href="tel:+447394604141">+44 7394 604141</a></p>
+</div>
+</div>
+<div class="contact-item">
+<div class="contact-icon">⏰</div>
+<div>
+<h4>Opening Hours</h4>
+<p>24 Hours — 7 Days a Week<br><span style="color:var(--accent);font-weight:600">Emergency service always available</span></p>
+</div>
+</div>
+<div class="contact-item">
+<div class="contact-icon">💬</div>
+<div>
+<h4>WhatsApp</h4>
+<p><a href="https://wa.me/447394604141?text=Hi%2C%20I%20found%20your%20website%20and%20would%20like%20a%20quote." target="_blank" rel="noopener">Message us on WhatsApp</a></p>
+</div>
+</div>
+<a href="https://www.google.com/maps/place/Phoenix+plumbing+%26+bathrooms/@53.0745981,-1.3874477,17z/data=!3m1!4b1!4m6!3m5!1s0x4879934388f06f41:0xb17c4651192b4d3f!8m2!3d53.0745981!4d-1.3874477!16s%2Fg%2F11r_xgv0w7" target="_blank" rel="noopener" class="map-placeholder">
+<span>📍</span>
+<p>Find Us on Google Maps</p>
+</a>
+</div>
+</div>
+</div>
+</section>
 
-  <!-- ===== TRUST TICKER ===== -->
-  <div class="trust-bar">
-    <div class="trust-ticker" aria-hidden="true">
-      <!-- doubled for seamless loop -->
-      <span class="trust-item">🔥 5-Star Google Rating</span>
-      <span class="trust-dot"></span>
-      <span class="trust-item">⚡ 24/7 Emergency Callouts</span>
-      <span class="trust-dot"></span>
-      <span class="trust-item">📍 Local to Alfreton &amp; Swanwick</span>
-      <span class="trust-dot"></span>
-      <span class="trust-item">💧 Leaks, Bathrooms, Boilers &amp; More</span>
-      <span class="trust-dot"></span>
-      <span class="trust-item">✅ Fully Insured &amp; Reliable</span>
-      <span class="trust-dot"></span>
-      <span class="trust-item">💰 Fair, Transparent Pricing</span>
-      <span class="trust-dot"></span>
-      <!-- repeat -->
-      <span class="trust-item">🔥 5-Star Google Rating</span>
-      <span class="trust-dot"></span>
-      <span class="trust-item">⚡ 24/7 Emergency Callouts</span>
-      <span class="trust-dot"></span>
-      <span class="trust-item">📍 Local to Alfreton &amp; Swanwick</span>
-      <span class="trust-dot"></span>
-      <span class="trust-item">💧 Leaks, Bathrooms, Boilers &amp; More</span>
-      <span class="trust-dot"></span>
-      <span class="trust-item">✅ Fully Insured &amp; Reliable</span>
-      <span class="trust-dot"></span>
-      <span class="trust-item">💰 Fair, Transparent Pricing</span>
-      <span class="trust-dot"></span>
-    </div>
-  </div>
+<!-- FOOTER -->
+<footer class="footer">
+<div class="footer-inner">
+<div class="footer-left">
+<div class="footer-brand"><span>Phoenix</span> Plumbing & Bathrooms</div>
+<p>Your trusted 24/7 emergency plumber in Alfreton, Derbyshire</p>
+</div>
+<div class="footer-socials">
+<a href="#" title="Coming soon" aria-label="Facebook">
+<svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+</a>
+<a href="#" title="Coming soon" aria-label="Instagram">
+<svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+</a>
+</div>
+</div>
+<div class="footer-copy">
+© 2025 Phoenix Plumbing & Bathrooms. Demo site by Innov8 Workflows.
+</div>
+</footer>
 
-  <!-- ===== SERVICES ===== -->
-  <section class="services" id="services">
-    <div class="container">
-      <p class="section-label">What We Do</p>
-      <h2 class="display section-title">Services</h2>
-      <p class="section-body">Whether it's a dripping tap at midnight or a full bathroom transformation, Kyle handles it all — fast, clean and fairly priced.</p>
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/447394604141?text=Hi%2C%20I%20found%20your%20website%20and%20would%20like%20a%20quote." target="_blank" rel="noopener" class="whatsapp-float" aria-label="Chat on WhatsApp">
+<span class="tooltip">Chat on WhatsApp</span>
+<svg viewBox="0 0 32 32"><path d="M16.004 0h-.008C7.174 0 0 7.176 0 16.004c0 3.502 1.14 6.742 3.072 9.368L1.06 31.476l6.318-2.012A15.917 15.917 0 0016.004 32C24.826 32 32 24.826 32 16.004S24.826 0 16.004 0zm9.262 22.594c-.39 1.098-1.924 2.01-3.158 2.276-.846.18-1.95.324-5.668-1.218-4.762-1.972-7.824-6.804-8.062-7.118-.228-.314-1.924-2.562-1.924-4.886s1.218-3.466 1.65-3.94c.432-.474.944-.592 1.258-.592.314 0 .628.002.902.016.29.014.678-.11 1.06.808.39.944 1.336 3.268 1.454 3.504.118.236.196.51.04.824-.158.314-.236.51-.472.786-.236.276-.496.616-.708.826-.236.236-.482.492-.208.964.276.472 1.226 2.022 2.632 3.276 1.81 1.614 3.336 2.114 3.808 2.35.472.236.748.196 1.024-.118.276-.314 1.178-1.376 1.492-1.848.314-.472.628-.392 1.06-.236.432.158 2.756 1.298 3.228 1.534.472.236.786.354.904.55.118.196.118 1.14-.272 2.238z"/></svg>
+</a>
 
-      <div class="services-grid">
-        <div class="service-card">
-          <span class="service-icon">💧</span>
-          <div class="service-name">Leak Repairs</div>
-          <p class="service-desc">Rapid diagnosis and repair of mains leaks, pipe bursts and hidden water damage before they become major problems.</p>
-        </div>
-        <div class="service-card">
-          <span class="service-icon">🛁</span>
-          <div class="service-name">Bathroom Installations</div>
-          <p class="service-desc">Full bathroom fits and refurbs — from design through to final fixtures. Tidy, professional work with minimal disruption.</p>
-        </div>
-        <div class="service-card">
-          <span class="service-icon">🚰</span>
-          <div class="service-name">Outside Taps</div>
-          <p class="service-desc">Supply and fit of external garden taps. Fully sealed, frost-resistant and ready to use — minimal mess guaranteed.</p>
-        </div>
-        <div class="service-card">
-          <span class="service-icon">🔥</span>
-          <div class="service-name">Boiler Work</div>
-          <p class="service-desc">Boiler servicing, repairs and system checks to keep your heating running efficiently and reliably year-round.</p>
-        </div>
-        <div class="service-card">
-          <span class="service-icon">🆘</span>
-          <div class="service-name">Burst Pipes</div>
-          <p class="service-desc">Emergency burst pipe response — 24 hours a day, 7 days a week. Kyle's quick to arrive and quicker to fix.</p>
-        </div>
-        <div class="service-card">
-          <span class="service-icon">🔧</span>
-          <div class="service-name">General Plumbing</div>
-          <p class="service-desc">Taps, valves, toilets, radiators, pipe re-routes — all the everyday plumbing jobs handled with care and expertise.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+<script>
+// Header scroll shadow
+const header = document.getElementById('header');
+let lastScroll = 0;
+window.addEventListener('scroll', function() {
+if (window.scrollY > 20) {
+header.classList.add('scrolled');
+} else {
+header.classList.remove('scrolled');
+}
+}, { passive: true });
 
-  <div class="fire-line"></div>
+// Mobile menu
+const hamburger = document.getElementById('hamburger');
+const mobileNav = document.getElementById('mobileNav');
 
-  <!-- ===== WHY KYLE ===== -->
-  <section class="why" id="about">
-    <div class="container">
-      <div class="why-inner">
+hamburger.addEventListener('click', function() {
+this.classList.toggle('active');
+mobileNav.classList.toggle('open');
+});
 
-        <div class="why-image-wrap">
-          <div class="why-frame"></div>
-          <img src="IMG_9271.jpeg" alt="Kyle at work — completed plumbing job" class="why-img">
-          <div class="why-img-badge">
-            <span class="why-img-badge-num">24/7</span>
-            <span class="why-img-badge-label">Always<br>Available</span>
-          </div>
-        </div>
+function closeMenu() {
+hamburger.classList.remove('active');
+mobileNav.classList.remove('open');
+}
 
-        <div>
-          <p class="section-label">Why Choose Kyle</p>
-          <h2 class="display section-title">The Plumber<br>You Can Trust</h2>
-          <p class="section-body">Kyle built Phoenix Plumbing on one principle: show up, do the job right, leave it tidy. No hidden charges. No excuses.</p>
+// Close menu on outside click
+document.addEventListener('click', function(e) {
+if (!hamburger.contains(e.target) && !mobileNav.contains(e.target)) {
+closeMenu();
+}
+});
 
-          <div class="why-points">
-            <div class="why-point">
-              <div class="why-point-icon">⚡</div>
-              <div>
-                <div class="why-point-title">24/7 Emergency Availability</div>
-                <p class="why-point-body">Plumbing disasters don't work office hours. Kyle is available any time of day or night — including weekends and bank holidays.</p>
-              </div>
-            </div>
-            <div class="why-point">
-              <div class="why-point-icon">📍</div>
-              <div>
-                <div class="why-point-title">Truly Local</div>
-                <p class="why-point-body">Based in Swanwick, serving Alfreton and the surrounding Derbyshire area. Short distances mean faster response times when it matters.</p>
-              </div>
-            </div>
-            <div class="why-point">
-              <div class="why-point-icon">💰</div>
-              <div>
-                <div class="why-point-title">Fair, Honest Pricing</div>
-                <p class="why-point-body">Customers consistently highlight Kyle's reasonable and transparent pricing. You know what you're paying before the work begins.</p>
-              </div>
-            </div>
-            <div class="why-point">
-              <div class="why-point-icon">✨</div>
-              <div>
-                <div class="why-point-title">Tidy &amp; Professional</div>
-                <p class="why-point-body">Kyle cleans up after every job. Minimal mess during the work, zero mess when he leaves. Your home is respected.</p>
-              </div>
-            </div>
-          </div>
-        </div>
+// Form handling
+function handleSubmit(e) {
+e.preventDefault();
+const form = e.target;
+const btn = form.querySelector('.btn-submit');
+const originalText = btn.textContent;
+btn.textContent = '✓ Enquiry Sent!';
+btn.style.background = '#16a34a';
+setTimeout(function() {
+btn.textContent = originalText;
+btn.style.background = '';
+form.reset();
+}, 3000);
+}
 
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== GALLERY ===== -->
-  <section class="gallery" id="work">
-    <div class="container">
-      <div class="gallery-header">
-        <div>
-          <p class="section-label">Completed Jobs</p>
-          <h2 class="display section-title">Our Work</h2>
-        </div>
-        <span class="badge badge--outline">Real Jobs, Real Results</span>
-      </div>
-
-      <div class="gallery-grid">
-        <!-- Row 1: large + small -->
-        <div class="gallery-item gallery-item--large">
-          <img src="IMG_9263.jpeg" alt="Bathroom installation by Pheonix Plumbing">
-          <div class="gallery-overlay"><span class="gallery-label">Bathroom Fit</span></div>
-        </div>
-        <div class="gallery-item gallery-item--small">
-          <img src="IMG_9264.jpeg" alt="Full bathroom renovation by Pheonix Plumbing">
-          <div class="gallery-overlay"><span class="gallery-label">Full Renovation</span></div>
-        </div>
-
-        <!-- Row 2: three equal thirds -->
-        <div class="gallery-item gallery-item--third">
-          <img src="IMG_9265.jpeg" alt="Patterned tile bathroom by Pheonix Plumbing">
-          <div class="gallery-overlay"><span class="gallery-label">Tiling &amp; Fitout</span></div>
-        </div>
-        <div class="gallery-item gallery-item--third">
-          <img src="IMG_9266.jpeg" alt="Shower installation by Pheonix Plumbing">
-          <div class="gallery-overlay"><span class="gallery-label">Shower Fit</span></div>
-        </div>
-        <div class="gallery-item gallery-item--third">
-          <img src="IMG_9267.jpeg" alt="Radiator installation by Pheonix Plumbing">
-          <div class="gallery-overlay"><span class="gallery-label">Radiator Install</span></div>
-        </div>
-
-        <!-- Row 3: small + large -->
-        <div class="gallery-item gallery-item--small">
-          <img src="IMG_9268.jpeg" alt="Pipework by Pheonix Plumbing">
-          <div class="gallery-overlay"><span class="gallery-label">Pipework</span></div>
-        </div>
-        <div class="gallery-item gallery-item--large">
-          <img src="IMG_9269.jpeg" alt="Bathroom completed by Pheonix Plumbing">
-          <div class="gallery-overlay"><span class="gallery-label">Completed Bathroom</span></div>
-        </div>
-
-        <!-- Row 4: two halves -->
-        <div class="gallery-item gallery-item--half">
-          <img src="IMG_9270.jpeg" alt="Walk-in shower by Pheonix Plumbing">
-          <div class="gallery-overlay"><span class="gallery-label">Walk-in Shower</span></div>
-        </div>
-        <div class="gallery-item gallery-item--half">
-          <img src="IMG_9272.jpeg" alt="Bathroom suite installation by Pheonix Plumbing">
-          <div class="gallery-overlay"><span class="gallery-label">Full Suite Install</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== REVIEWS ===== -->
-  <section class="reviews" id="reviews">
-    <div class="container">
-      <p class="section-label">Customer Reviews</p>
-      <h2 class="display section-title">What People Say</h2>
-
-      <div class="reviews-meta">
-        <span class="reviews-score">5.0</span>
-        <div class="reviews-info">
-          <div class="stars">★★★★★</div>
-          <span class="reviews-count">18 Google Reviews · Perfect Score</span>
-        </div>
-      </div>
-
-      <div class="reviews-grid">
-
-        <div class="review-card">
-          <span class="review-quote-mark">"</span>
-          <div class="review-stars stars">★★★★★</div>
-          <p class="review-text">We called Kyle out for a mains water leak and he arrived within 15 minutes. Conditions were bleak with it being an active groundwork site but it didn't phase Kyle one bit. He went above and beyond to get the issue resolved and water back up and running to our property. Highly recommend and fantastic price!</p>
-          <div class="review-author">
-            <div class="review-avatar">JR</div>
-            <div>
-              <div class="review-name">Joshua Robinson</div>
-              <div class="review-source">Google Review</div>
-            </div>
-            <span class="google-badge">★ Google</span>
-          </div>
-        </div>
-
-        <div class="review-card">
-          <span class="review-quote-mark">"</span>
-          <div class="review-stars stars">★★★★★</div>
-          <p class="review-text">I had an outside tap fitted. He did a brilliant job. Very minimal mess and cleaned up after he finished the job and a very reasonable price. Very friendly and approachable. Would definitely recommend using Kyle for any plumbing work.</p>
-          <div class="review-author">
-            <div class="review-avatar">C</div>
-            <div>
-              <div class="review-name">Carolyn</div>
-              <div class="review-source">Google Review</div>
-            </div>
-            <span class="google-badge">★ Google</span>
-          </div>
-        </div>
-
-        <div class="review-card">
-          <span class="review-quote-mark">"</span>
-          <div class="review-stars stars">★★★★★</div>
-          <p class="review-text">Did a great job working on the pipes and taps of our 1950s ex-council house and possibly 70 years of lime build-up. We definitely will have Kyle in again next time!</p>
-          <div class="review-author">
-            <div class="review-avatar">BC</div>
-            <div>
-              <div class="review-name">Boyd Chester-Freeman</div>
-              <div class="review-source">Google Review</div>
-            </div>
-            <span class="google-badge">★ Google</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <div class="fire-line"></div>
-
-  <!-- ===== CONTACT ===== -->
-  <section class="contact" id="contact">
-    <div class="container">
-      <p class="section-label">Get In Touch</p>
-      <h2 class="display section-title">Ready When You Are</h2>
-
-      <div class="contact-inner">
-
-        <div>
-          <div class="contact-details">
-
-            <div class="contact-item">
-              <div class="contact-icon">📞</div>
-              <div>
-                <div class="contact-item-label">Phone</div>
-                <a href="tel:07394604141" class="contact-item-value" style="color: var(--fire);">07394 604141</a>
-              </div>
-            </div>
-
-            <div class="contact-item">
-              <div class="contact-icon">📍</div>
-              <div>
-                <div class="contact-item-label">Based At</div>
-                <div class="contact-item-value">Broadway, Swanwick<br>Alfreton, DE55 1AJ</div>
-              </div>
-            </div>
-
-            <div class="contact-item">
-              <div class="contact-icon">🕐</div>
-              <div>
-                <div class="contact-item-label">Opening Hours</div>
-                <div class="contact-item-value">Open 24 Hours<br>Monday – Sunday</div>
-              </div>
-            </div>
-
-            <div class="contact-item">
-              <div class="contact-icon">🗺️</div>
-              <div>
-                <div class="contact-item-label">Coverage Area</div>
-                <div class="contact-item-value" style="font-size: 0.95rem; color: var(--grey);">Alfreton, Swanwick, Ripley, Somercotes, Heanor, Belper &amp; surrounding Derbyshire areas</div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <div class="contact-cta-box">
-          <p class="section-label" style="margin: 0 0 0.5rem; text-align: center;">Call Anytime</p>
-          <h3 class="display" style="font-size: 2.2rem; text-transform: uppercase; text-align: center;">Got a Plumbing Problem?</h3>
-          <p>Don't wait — water damage gets worse fast. Call Kyle now for a prompt, professional response at any hour.</p>
-
-          <div class="available-tag" style="margin: 0 auto 1rem; justify-content: center;">
-            <span class="available-dot"></span>
-            Available Right Now
-          </div>
-
-          <a href="tel:07394604141" class="phone-big">07394 604141</a>
-
-          <a href="tel:07394604141" class="btn-primary" style="width: 100%; justify-content: center; font-size: 1.1rem; padding: 1.1rem 2rem;">
-            📞 Call Kyle Now
-          </a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== FOOTER ===== -->
-  <footer>
-    <div class="container">
-      <div class="footer-inner">
-
-        <div>
-          <div class="footer-brand-name">Phoenix <span>Plumbing</span> &amp; Bathrooms</div>
-          <p class="footer-tagline">Your local, reliable plumber in Alfreton and Swanwick. Available 24/7 for emergencies and planned works. Fair prices, tidy work, five stars every time.</p>
-        </div>
-
-        <div>
-          <div class="footer-col-title">Services</div>
-          <ul class="footer-list">
-            <li>Leak Repairs</li>
-            <li>Bathroom Installations</li>
-            <li>Outside Taps</li>
-            <li>Boiler Work</li>
-            <li>Burst Pipes</li>
-            <li>General Plumbing</li>
-          </ul>
-        </div>
-
-        <div>
-          <div class="footer-col-title">Contact</div>
-          <ul class="footer-list">
-            <li><a href="tel:07394604141" style="color: var(--fire);">07394 604141</a></li>
-            <li>Swanwick, Alfreton</li>
-            <li>DE55 1AJ</li>
-            <li style="color: #4ade80; margin-top: 0.4rem;">● Open 24/7</li>
-          </ul>
-        </div>
-
-      </div>
-
-      <div class="footer-bottom">
-        <span class="footer-copy">© 2025 Phoenix Plumbing &amp; Bathrooms. All rights reserved.</span>
-        <span class="footer-copy">Broadway, Swanwick, Alfreton, DE55 1AJ</span>
-      </div>
-    </div>
-  </footer>
+// Smooth scroll for anchor links (fallback)
+document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+anchor.addEventListener('click', function(e) {
+const target = document.querySelector(this.getAttribute('href'));
+if (target) {
+e.preventDefault();
+const headerHeight = header.offsetHeight;
+const targetPos = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+window.scrollTo({ top: targetPos, behavior: 'smooth' });
+}
+});
+});
+</script>
 
 </body>
 </html>
